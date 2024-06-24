@@ -1,13 +1,16 @@
+/* Base Styles */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 40px 120px;
+    padding: 20px 40px;
+    background-color: inherit;
     color: white;
+    transition: all 0.3s ease;
 }
 
 .nav-logo {
-    font-family: Outfit;
+    font-family: Outfit, sans-serif;
     font-size: 42px;
     font-weight: 500;
 }
@@ -27,6 +30,13 @@
     background: #fff;
     color: #262626;
     cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effects */
+.nav-contact:hover {
+    background: #262626;
+    color: #fff;
 }
 
 /* Media Queries */
@@ -34,7 +44,7 @@
 /* Large screens (desktops, 1200px and above) */
 @media (max-width: 1200px) {
     .nav {
-        margin: 40px 60px;
+        padding: 20px 30px;
     }
 
     .nav-menu {
@@ -49,7 +59,7 @@
 /* Medium screens (tablets, 768px to 1199px) */
 @media (max-width: 768px) {
     .nav {
-        margin: 30px 30px;
+        padding: 20px 20px;
     }
 
     .nav-logo {
@@ -69,14 +79,14 @@
 /* Small screens (mobile devices, 480px to 767px) */
 @media (max-width: 480px) {
     .nav {
-        margin: 20px 20px;
         flex-direction: column;
         align-items: flex-start;
+        padding: 15px 20px;
     }
 
     .nav-logo {
         font-size: 32px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .nav-menu {
@@ -93,7 +103,7 @@
 /* Extra small screens (mobile devices, less than 480px) */
 @media (max-width: 320px) {
     .nav {
-        margin: 15px 10px;
+        padding: 10px 10px;
     }
 
     .nav-logo {
@@ -108,5 +118,42 @@
     .nav-contact {
         padding: 6px 15px;
         font-size: 14px;
+    }
+}
+
+/* Optional: Hamburger Menu for Small Screens */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
     }
 }
