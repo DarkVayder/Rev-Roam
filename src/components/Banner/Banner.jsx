@@ -1,6 +1,5 @@
 import React from 'react';
 import './Banner.css';
-import arrow_btn from '../../Assets/arrow_btn.png';
 import play_icon from '../../Assets/play_icon.png';
 import pause_icon from '../../Assets/pause_icon.png';
 
@@ -10,10 +9,6 @@ const Banner = ({ bannerCount, setBannerCount, BannerData, setPlayStatus, playSt
       <div className="banner-text">
         <p>{BannerData.text1}</p>
         <p>{BannerData.text2}</p>
-      </div>
-      <div className="banner-explore">
-        <p>Explore the features</p>
-        <img src={arrow_btn} alt='Explore features' />
       </div>
       <div className="banner-i-play">
         <ul className='banner-p'>
